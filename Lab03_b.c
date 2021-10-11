@@ -1,3 +1,12 @@
+/*
+ * File Name: Lab03_b
+ * Developed By: Skylar Grant
+ * Submission To: Bill Dolan (ETC-220)
+ * Development Date: 10/2021
+ *
+ * Description: 
+*/
+
 void main() {
      TRISB = 0x0F;      // RB_0 thru RB_3 as input
      ANSELB = 0x00;     // Set PortB to digital
