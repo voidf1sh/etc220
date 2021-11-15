@@ -5,10 +5,14 @@
  * Development Date: 11/15/2021
  *
  * Description: Demonstration of 8x8x1 LED matrix
+ * PORTB = col
+ * PORTC = row
 */
 
 // Variable for counting
-int i;
+int i,j;
+int col[8] = {1,2,4,8,16,32,64,128};
+int row[8] = {128,64,32,16,8,4,2,1};
 
 // Set Ports B and C for output and clear them
 TRISB = 0;
@@ -22,9 +26,12 @@ void main()
 	{
 		for (i = 0; i < 8; i++)
 		{
-			PORTB = pow(2,i);
-			PORTC = pow(2,i);
-			delay_ms(500);
+			PORTB = ~col[i];
+			for (j = 0; j < 8; j++)
+			{
+				PORTC = ~row[j];
+				delay_ms(500);
+			}
 		}
 	}
 }
