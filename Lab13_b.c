@@ -12,24 +12,32 @@
 // Variable for counting
 int i, j;
 int col[8] = {1, 2, 4, 8, 16, 32, 64, 128};
-int row[8] = {1, 2, 4, 8, 16, 32, 64, 128};
+int row[8] = {1,2,4,8,16,32,64,128};
 
 void draw(int x, int y)
 {
-    PORTB = ~col[x];
-    PORTC = row[y];
-    delay_ms(100);
+    PORTB = ~col[x-1];
+    PORTC = row[y-1];
+	delay_ms(500);
     return;
 }
 
-void demo()
-{
-    for (i = 0; i < 8; i++)
+void demo() {
+    for (i = 1; i < 9; i++)
     {
-        for (j = 0; j < 8; j++)
-        {
-            draw(i, j);
-        }
+        draw(i,1);
+    }
+    for (i = 1; i < 9; i++)
+    {
+        draw(8,i);
+    }
+    for (i = 8; i >= 0; i--)
+    {
+        draw(i,8);
+    }
+    for (i = 8; i >= 0; i--)
+    {
+        draw(1,i);
     }
 }
 

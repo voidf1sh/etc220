@@ -16,21 +16,22 @@ int row[8] = {1, 2, 4, 8, 16, 32, 64, 128};
 
 void draw(int x, int y)
 {
-    PORTB = ~col[x];
-    PORTC = row[y];
-    delay_ms(100);
+    PORTB = ~col[x - 1];
+    PORTC = row[y - 1];
+    delay_ms(500);
     return;
 }
 
 void demo()
 {
-    for (i = 0; i < 8; i++)
-    {
-        for (j = 0; j < 8; j++)
-        {
-            draw(i, j);
-        }
-    }
+    draw(1, 1);
+    draw(8, 1);
+    draw(8, 8);
+    draw(1, 8);
+    draw(5, 4);
+    draw(5, 5);
+    draw(4, 5);
+    draw(4, 4);
 }
 
 void main()
