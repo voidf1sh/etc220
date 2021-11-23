@@ -6,7 +6,7 @@
  *
 */
 
-int i;     // For looping bruh
+int i;     // For looping
 
 // Map the LCD pins to the chips port pins
 sbit LCD_RS at RB4_bit;
