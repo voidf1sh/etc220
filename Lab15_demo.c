@@ -16,11 +16,8 @@ void wait()
 
 void main()
 {
-	TRISB = 0xFF;
-	TRISC = 0x00;
-	PORTB = 0x00;
-	PORTC = 0x00;
-
+	TRISC = 0; // Output
+	TRISD = 
 	for (i = 0; i < 256; i++)
 	{
 		PORTC = i;
